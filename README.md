@@ -59,6 +59,8 @@ Untuk informasi lebih lanjut, lihat dokumentasi Raiden Framework di: [Raiden Fra
   
 ### C4 Diagram
 Context (C1)
+![structurizr-1-SystemContext-001 (1)](https://github.com/user-attachments/assets/5c7064ec-bb9d-45ef-a832-709a5996ffd6)
+
 ![structurizr-1-SystemContext-001 (2)](https://github.com/user-attachments/assets/63979ef9-aa3e-48b6-861b-30c5e5b37afb)
 
 Container (C2)
