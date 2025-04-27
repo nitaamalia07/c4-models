@@ -61,26 +61,25 @@ Untuk informasi lebih lanjut, lihat dokumentasi Raiden Framework di: [Raiden Fra
 Context (C1)
 ![structurizr-1-SystemContext-001 (1)](https://github.com/user-attachments/assets/5c7064ec-bb9d-45ef-a832-709a5996ffd6)
 
-![structurizr-1-SystemContext-001 (2)](https://github.com/user-attachments/assets/63979ef9-aa3e-48b6-861b-30c5e5b37afb)
-
 Container (C2)
-![structurizr-1-Container-001 (2)](https://github.com/user-attachments/assets/dfde0f22-7997-4bea-8892-914599aaaaba)
+![structurizr-1-Container-001 (4)](https://github.com/user-attachments/assets/7c287c48-8537-41e5-9770-a433748fd95b)
 
 Componen (C3)
-![c3 g](https://github.com/user-attachments/assets/0d26a9b7-adc9-471a-ae98-4d7ed12a43a2)
+![c3 g](https://github.com/user-attachments/assets/a518cc52-1770-46ef-9273-4427cfbfec0f)
 
 User story
 -Super Admin
-![user story super admin](https://github.com/user-attachments/assets/d3a3911f-9a65-43e9-b540-0f28d27c2317)
+![user story super admin](https://github.com/user-attachments/assets/df0b2753-0a57-43c3-9a63-19934ff16dee)
 
 -Admin
-![user story admin](https://github.com/user-attachments/assets/ce4ebaea-3ae1-429b-809f-5d18d8a6029c)
+![user story admin](https://github.com/user-attachments/assets/ccf84cd0-cc98-490d-bf17-20c859cb3b9a)
 
 -Dokter
-![user story doctor](https://github.com/user-attachments/assets/b74b61e2-e316-4c10-ac36-8033cc193fe1)
+![user story doctor](https://github.com/user-attachments/assets/c4d64a55-2605-429c-826a-41de9bf52b79)
 
 -Pasien
-![user story pasien](https://github.com/user-attachments/assets/ca7028f8-a002-4470-80b9-73a390ff946e)
+![user story pasien](https://github.com/user-attachments/assets/5d78e252-ee27-4296-9736-212b813143d2)
 
 Code (C4)
-![c4 gambar](https://github.com/user-attachments/assets/59250097-7bce-4da8-be63-29ecb09196db)
+![c4 gambar](https://github.com/user-attachments/assets/fcc18e66-3025-4be0-b12e-45df15f2fff6)
+
