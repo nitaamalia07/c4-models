@@ -1,0 +1,1145 @@
+{
+  "configuration" : { },
+  "description" : "Medpoint is a platform to reserve a doctor's appointment",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2025-04-27T16:34:01Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Membuat reservasi, membatalkan, dan melakukan pembayaran",
+      "id" : "108",
+      "location" : "Unspecified",
+      "name" : "Pasien",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ppasien"
+      },
+      "relationships" : [ {
+        "description" : "Pasien bisa mengakses sistem untuk melakukan reservasi, melihat dokter dan jadwal reservasi, melakukan pembayaran",
+        "destinationId" : "4",
+        "id" : "109",
+        "sourceId" : "108",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Pasien dapat login menggunakan aplikasi mobile",
+        "destinationId" : "74",
+        "id" : "110",
+        "sourceId" : "108",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Pasien dapat login menggunakan aplikasi mobile",
+        "destinationId" : "73",
+        "id" : "111",
+        "linkedRelationshipId" : "110",
+        "sourceId" : "108"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Mengelola data master, jadwal, slot reservasi, dan pembayaran",
+      "id" : "112",
+      "location" : "Unspecified",
+      "name" : "Admin",
+      "properties" : {
+        "structurizr.dsl.identifier" : "padmin"
+      },
+      "relationships" : [ {
+        "description" : "Mengelola data master, jadwal, slot reservasi, dan pembayaran",
+        "destinationId" : "4",
+        "id" : "113",
+        "sourceId" : "112",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Admin dapat login menggunakan website",
+        "destinationId" : "96",
+        "id" : "114",
+        "sourceId" : "112",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Admin dapat login menggunakan website",
+        "destinationId" : "90",
+        "id" : "115",
+        "linkedRelationshipId" : "114",
+        "sourceId" : "112"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Mengelola semua data master dan hak akses pengguna",
+      "id" : "116",
+      "location" : "Unspecified",
+      "name" : "SuperAdmin",
+      "properties" : {
+        "structurizr.dsl.identifier" : "psuperadmin"
+      },
+      "relationships" : [ {
+        "description" : "bisa mengelola sesi konsultasi dan reservasi",
+        "destinationId" : "4",
+        "id" : "117",
+        "sourceId" : "116",
+        "tags" : "Relationship"
+      }, {
+        "description" : "SuperAdmin dapat login menggunakan aplikasi website",
+        "destinationId" : "96",
+        "id" : "118",
+        "sourceId" : "116",
+        "tags" : "Relationship"
+      }, {
+        "description" : "SuperAdmin dapat login menggunakan aplikasi website",
+        "destinationId" : "90",
+        "id" : "119",
+        "linkedRelationshipId" : "118",
+        "sourceId" : "116"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Menyediakan slot reservasi, menyetujui reservasi, memberikan konsultasi dan resep obat.",
+      "id" : "120",
+      "location" : "Unspecified",
+      "name" : "Dokter",
+      "properties" : {
+        "structurizr.dsl.identifier" : "pdokter"
+      },
+      "relationships" : [ {
+        "description" : "melakukan pengelolaan semua data master dan hak akses pengguna",
+        "destinationId" : "4",
+        "id" : "121",
+        "sourceId" : "120",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dokter dapat login menggunakan aplikasi website",
+        "destinationId" : "96",
+        "id" : "122",
+        "sourceId" : "120",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dokter dapat login menggunakan aplikasi website",
+        "destinationId" : "90",
+        "id" : "123",
+        "linkedRelationshipId" : "122",
+        "sourceId" : "120"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "External IDP (Google/Apple/Meta/Twillio/Mailgun)",
+      "documentation" : { },
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "External Auth",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ssexternalauth"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "External Payment (BRI)",
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "External Payment",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ssexternalpayment"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "External Messaging (Twillio/Mailgun/FCM)",
+      "documentation" : { },
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "External Messaging",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ssexternalmessaging"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "components" : [ {
+          "description" : "Menyimpan dan membaca data dari database",
+          "documentation" : { },
+          "id" : "6",
+          "name" : "Doctor Management",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comdatabasedoctormanagement"
+          },
+          "tags" : "Element,Component,Database"
+        }, {
+          "description" : "Menyimpan dan membaca data dari database",
+          "documentation" : { },
+          "id" : "7",
+          "name" : "Master Data Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comdatabasemasterdataservice"
+          },
+          "tags" : "Element,Component,Database"
+        }, {
+          "description" : "Menyimpan dan membaca data dari database",
+          "documentation" : { },
+          "id" : "8",
+          "name" : "Payment Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comdatabasepaymentservice"
+          },
+          "tags" : "Element,Component,Database"
+        }, {
+          "description" : "Menyimpan dan membaca data dari database",
+          "documentation" : { },
+          "id" : "9",
+          "name" : "Reservation Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comdatabasereservationservice"
+          },
+          "tags" : "Element,Component,Database"
+        }, {
+          "description" : "Stores users data.",
+          "documentation" : { },
+          "id" : "10",
+          "name" : "users",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comdatabaseusertable"
+          },
+          "tags" : "Element,Component,Database"
+        } ],
+        "description" : "Stores all data for the application.",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cdatabase"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "PostgreSQL"
+      }, {
+        "components" : [ {
+          "description" : "Handle /login/email",
+          "documentation" : { },
+          "id" : "12",
+          "name" : "Auth Email Login",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comauthemaillogin"
+          },
+          "relationships" : [ {
+            "description" : "Check if user's email exists",
+            "destinationId" : "10",
+            "id" : "13",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Check if user's email exists",
+            "destinationId" : "5",
+            "id" : "14",
+            "linkedRelationshipId" : "13",
+            "sourceId" : "12"
+          }, {
+            "description" : "Initiate Username/Password auth flow",
+            "destinationId" : "1",
+            "id" : "17",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Backend to handle authn/authz",
+        "documentation" : { },
+        "id" : "11",
+        "name" : "Supabase Auth service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cauth"
+        },
+        "relationships" : [ {
+          "description" : "Check if user's email exists",
+          "destinationId" : "10",
+          "id" : "15",
+          "linkedRelationshipId" : "13",
+          "sourceId" : "11"
+        }, {
+          "description" : "Check if user's email exists",
+          "destinationId" : "5",
+          "id" : "16",
+          "linkedRelationshipId" : "13",
+          "sourceId" : "11"
+        }, {
+          "description" : "Initiate Username/Password auth flow",
+          "destinationId" : "1",
+          "id" : "18",
+          "linkedRelationshipId" : "17",
+          "sourceId" : "11"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Supabase"
+      }, {
+        "components" : [ {
+          "description" : "Handle /api/v1/doctormanagement",
+          "documentation" : { },
+          "id" : "21",
+          "name" : "Doctor Management RESTful endpoint",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comrestdoctormanagement"
+          },
+          "relationships" : [ {
+            "description" : "Mengelola data dokter",
+            "destinationId" : "6",
+            "id" : "22",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Mengelola data dokter",
+            "destinationId" : "5",
+            "id" : "23",
+            "linkedRelationshipId" : "22",
+            "sourceId" : "21"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle /api/v1/masterdataservice",
+          "documentation" : { },
+          "id" : "26",
+          "name" : "Master Data Service RESTful endpoint",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comrestmasterdataservice"
+          },
+          "relationships" : [ {
+            "description" : "CRUD data master seperti poli, faskes, layanan, alamat",
+            "destinationId" : "7",
+            "id" : "27",
+            "sourceId" : "26",
+            "tags" : "Relationship"
+          }, {
+            "description" : "CRUD data master seperti poli, faskes, layanan, alamat",
+            "destinationId" : "5",
+            "id" : "28",
+            "linkedRelationshipId" : "27",
+            "sourceId" : "26"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle /api/v1/users",
+          "documentation" : { },
+          "id" : "30",
+          "name" : "User RESTful endpoint",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comrestuser"
+          },
+          "relationships" : [ {
+            "description" : "Manage user's data",
+            "destinationId" : "10",
+            "id" : "31",
+            "sourceId" : "30",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Manage user's data",
+            "destinationId" : "5",
+            "id" : "32",
+            "linkedRelationshipId" : "31",
+            "sourceId" : "30"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Backend to handle REST",
+        "documentation" : { },
+        "id" : "20",
+        "name" : "PostgreSQL REST Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "crest"
+        },
+        "relationships" : [ {
+          "description" : "Mengelola data dokter",
+          "destinationId" : "6",
+          "id" : "24",
+          "linkedRelationshipId" : "22",
+          "sourceId" : "20"
+        }, {
+          "description" : "Mengelola data dokter",
+          "destinationId" : "5",
+          "id" : "25",
+          "linkedRelationshipId" : "22",
+          "sourceId" : "20"
+        }, {
+          "description" : "CRUD data master seperti poli, faskes, layanan, alamat",
+          "destinationId" : "7",
+          "id" : "29",
+          "linkedRelationshipId" : "27",
+          "sourceId" : "20"
+        }, {
+          "description" : "Manage user's data",
+          "destinationId" : "10",
+          "id" : "33",
+          "linkedRelationshipId" : "31",
+          "sourceId" : "20"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Supabase"
+      }, {
+        "components" : [ {
+          "description" : "Handle /auth",
+          "documentation" : { },
+          "id" : "35",
+          "name" : "Bff mobile Auth",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffmobileauth"
+          },
+          "relationships" : [ {
+            "description" : "Call login with email endpoint",
+            "destinationId" : "12",
+            "id" : "36",
+            "sourceId" : "35",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Call login with email endpoint",
+            "destinationId" : "11",
+            "id" : "37",
+            "linkedRelationshipId" : "36",
+            "sourceId" : "35"
+          }, {
+            "description" : "Get user",
+            "destinationId" : "30",
+            "id" : "40",
+            "sourceId" : "35",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get user",
+            "destinationId" : "20",
+            "id" : "41",
+            "linkedRelationshipId" : "40",
+            "sourceId" : "35"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Service yang mengelola pembayaran ke gateway eksternal",
+          "documentation" : { },
+          "id" : "44",
+          "name" : "Rest Payment Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comrestpaymentservice"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle /Payment Service",
+          "documentation" : { },
+          "id" : "45",
+          "name" : "Bff mobile Payment Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffmobilepaymentservice"
+          },
+          "relationships" : [ {
+            "description" : "Melakukan pembayaran tagihan",
+            "destinationId" : "44",
+            "id" : "46",
+            "sourceId" : "45",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Mengelola data reservasi ke sistem backend",
+          "documentation" : { },
+          "id" : "47",
+          "name" : "Rest Reservation Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comrestreservationservice"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle /Reservation Service",
+          "documentation" : { },
+          "id" : "48",
+          "name" : "Bff mobile Reservation Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffmobilereservationservice"
+          },
+          "relationships" : [ {
+            "description" : "Membuat atau membatalkan reservasi",
+            "destinationId" : "47",
+            "id" : "49",
+            "sourceId" : "48",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Backend to handle Mobile related requests",
+        "documentation" : { },
+        "id" : "34",
+        "name" : "BFF for Mobile",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cbffmobile"
+        },
+        "relationships" : [ {
+          "description" : "Call login with email endpoint",
+          "destinationId" : "12",
+          "id" : "38",
+          "linkedRelationshipId" : "36",
+          "sourceId" : "34"
+        }, {
+          "description" : "Call login with email endpoint",
+          "destinationId" : "11",
+          "id" : "39",
+          "linkedRelationshipId" : "36",
+          "sourceId" : "34"
+        }, {
+          "description" : "Get user",
+          "destinationId" : "30",
+          "id" : "42",
+          "linkedRelationshipId" : "40",
+          "sourceId" : "34"
+        }, {
+          "description" : "Get user",
+          "destinationId" : "20",
+          "id" : "43",
+          "linkedRelationshipId" : "40",
+          "sourceId" : "34"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Raiden"
+      }, {
+        "components" : [ {
+          "description" : "Handle / Doctor Management",
+          "documentation" : { },
+          "id" : "51",
+          "name" : "Bff web Doctor Management",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffwebdoctormanagement"
+          },
+          "relationships" : [ {
+            "description" : "Mengelola data dokter",
+            "destinationId" : "21",
+            "id" : "52",
+            "sourceId" : "51",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Mengelola data dokter",
+            "destinationId" : "20",
+            "id" : "53",
+            "linkedRelationshipId" : "52",
+            "sourceId" : "51"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle / Master Data Service",
+          "documentation" : { },
+          "id" : "56",
+          "name" : "Bff web Master Data Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffwebmasterdataservice"
+          },
+          "relationships" : [ {
+            "description" : "Mengelola data master seperti faskes, poli, layanan, dan alamat",
+            "destinationId" : "26",
+            "id" : "57",
+            "sourceId" : "56",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Mengelola data master seperti faskes, poli, layanan, dan alamat",
+            "destinationId" : "20",
+            "id" : "58",
+            "linkedRelationshipId" : "57",
+            "sourceId" : "56"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle / Reservation Services",
+          "documentation" : { },
+          "id" : "60",
+          "name" : "Bff web Reservation Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffwebreservationservice"
+          },
+          "relationships" : [ {
+            "description" : "Mengelola pemesanan dan jadwal reservasi",
+            "destinationId" : "47",
+            "id" : "61",
+            "sourceId" : "60",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Mengelola pemesanan dan jadwal reservasi",
+            "destinationId" : "34",
+            "id" : "62",
+            "linkedRelationshipId" : "61",
+            "sourceId" : "60"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handle /auth",
+          "documentation" : { },
+          "id" : "65",
+          "name" : "Bff web Auth",
+          "properties" : {
+            "structurizr.dsl.identifier" : "combffwebauth"
+          },
+          "relationships" : [ {
+            "description" : "Call login with email endpoint",
+            "destinationId" : "12",
+            "id" : "66",
+            "sourceId" : "65",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Call login with email endpoint",
+            "destinationId" : "11",
+            "id" : "67",
+            "linkedRelationshipId" : "66",
+            "sourceId" : "65"
+          }, {
+            "description" : "Get user",
+            "destinationId" : "30",
+            "id" : "70",
+            "sourceId" : "65",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get user",
+            "destinationId" : "20",
+            "id" : "71",
+            "linkedRelationshipId" : "70",
+            "sourceId" : "65"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Backend to handle Web related requests",
+        "documentation" : { },
+        "id" : "50",
+        "name" : "BFF for Web",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cbffweb"
+        },
+        "relationships" : [ {
+          "description" : "Mengelola data dokter",
+          "destinationId" : "21",
+          "id" : "54",
+          "linkedRelationshipId" : "52",
+          "sourceId" : "50"
+        }, {
+          "description" : "Mengelola data dokter",
+          "destinationId" : "20",
+          "id" : "55",
+          "linkedRelationshipId" : "52",
+          "sourceId" : "50"
+        }, {
+          "description" : "Mengelola data master seperti faskes, poli, layanan, dan alamat",
+          "destinationId" : "26",
+          "id" : "59",
+          "linkedRelationshipId" : "57",
+          "sourceId" : "50"
+        }, {
+          "description" : "Mengelola pemesanan dan jadwal reservasi",
+          "destinationId" : "47",
+          "id" : "63",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "50"
+        }, {
+          "description" : "Mengelola pemesanan dan jadwal reservasi",
+          "destinationId" : "34",
+          "id" : "64",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "50"
+        }, {
+          "description" : "Call login with email endpoint",
+          "destinationId" : "12",
+          "id" : "68",
+          "linkedRelationshipId" : "66",
+          "sourceId" : "50"
+        }, {
+          "description" : "Call login with email endpoint",
+          "destinationId" : "11",
+          "id" : "69",
+          "linkedRelationshipId" : "66",
+          "sourceId" : "50"
+        }, {
+          "description" : "Get user",
+          "destinationId" : "30",
+          "id" : "72",
+          "linkedRelationshipId" : "70",
+          "sourceId" : "50"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Raiden"
+      }, {
+        "components" : [ {
+          "description" : "Mobile Login screen.",
+          "documentation" : { },
+          "id" : "74",
+          "name" : "Mobile Login",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commobilelogin"
+          },
+          "relationships" : [ {
+            "description" : "Login via Email",
+            "destinationId" : "35",
+            "id" : "75",
+            "sourceId" : "74",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Login via Email",
+            "destinationId" : "34",
+            "id" : "76",
+            "linkedRelationshipId" : "75",
+            "sourceId" : "74"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "Flutter"
+        }, {
+          "description" : "Menangani billing dan validasi pembayaran",
+          "documentation" : { },
+          "id" : "79",
+          "name" : "Mobile Payment Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commobilepaymentservice"
+          },
+          "relationships" : [ {
+            "description" : "Melakukan pembayaran tagihan",
+            "destinationId" : "45",
+            "id" : "80",
+            "sourceId" : "79",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Melakukan pembayaran tagihan",
+            "destinationId" : "34",
+            "id" : "81",
+            "linkedRelationshipId" : "80",
+            "sourceId" : "79"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "Flutter"
+        }, {
+          "description" : "Mobile Auth Registration for User",
+          "documentation" : { },
+          "id" : "83",
+          "name" : "Mobile Registration",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commobileregister"
+          },
+          "relationships" : [ {
+            "description" : "Register with Email, Pass, Username, Number Phone",
+            "destinationId" : "35",
+            "id" : "84",
+            "sourceId" : "83",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Register with Email, Pass, Username, Number Phone",
+            "destinationId" : "34",
+            "id" : "85",
+            "linkedRelationshipId" : "84",
+            "sourceId" : "83"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "Flutter"
+        }, {
+          "description" : "Mengelola pemesanan dan jadwal reservasi",
+          "documentation" : { },
+          "id" : "86",
+          "name" : "Mobile Reservation Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commobilereservationservice"
+          },
+          "relationships" : [ {
+            "description" : "Membuat atau membatalkan reservasi",
+            "destinationId" : "48",
+            "id" : "87",
+            "sourceId" : "86",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Membuat atau membatalkan reservasi",
+            "destinationId" : "34",
+            "id" : "88",
+            "linkedRelationshipId" : "87",
+            "sourceId" : "86"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "Flutter"
+        } ],
+        "description" : "Mobile screen for Medpoint application.",
+        "documentation" : { },
+        "id" : "73",
+        "name" : "Mobile Medpoint",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cmobile"
+        },
+        "relationships" : [ {
+          "description" : "Login via Email",
+          "destinationId" : "35",
+          "id" : "77",
+          "linkedRelationshipId" : "75",
+          "sourceId" : "73"
+        }, {
+          "description" : "Login via Email",
+          "destinationId" : "34",
+          "id" : "78",
+          "linkedRelationshipId" : "75",
+          "sourceId" : "73"
+        }, {
+          "description" : "Melakukan pembayaran tagihan",
+          "destinationId" : "45",
+          "id" : "82",
+          "linkedRelationshipId" : "80",
+          "sourceId" : "73"
+        }, {
+          "description" : "Membuat atau membatalkan reservasi",
+          "destinationId" : "48",
+          "id" : "89",
+          "linkedRelationshipId" : "87",
+          "sourceId" : "73"
+        } ],
+        "tags" : "Element,Container,Screen",
+        "technology" : "Flutter"
+      }, {
+        "components" : [ {
+          "description" : "Mengelola data dan jadwal dokter",
+          "documentation" : { },
+          "id" : "91",
+          "name" : "Web Doctor Management",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commobiledoctormanagement"
+          },
+          "relationships" : [ {
+            "description" : "Mengelola data dokter",
+            "destinationId" : "51",
+            "id" : "92",
+            "sourceId" : "91",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Mengelola data dokter",
+            "destinationId" : "50",
+            "id" : "93",
+            "linkedRelationshipId" : "92",
+            "sourceId" : "91"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "React JS with Typescript"
+        }, {
+          "description" : "Web Login screen.",
+          "documentation" : { },
+          "id" : "96",
+          "name" : "Web Login",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comweblogin"
+          },
+          "relationships" : [ {
+            "description" : "Login via Email",
+            "destinationId" : "65",
+            "id" : "97",
+            "sourceId" : "96",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Login via Email",
+            "destinationId" : "50",
+            "id" : "98",
+            "linkedRelationshipId" : "97",
+            "sourceId" : "96"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "React JS with Typescript"
+        }, {
+          "description" : "Mengelola data master seperti faskes, poli, layanan, dan alamat",
+          "documentation" : { },
+          "id" : "100",
+          "name" : "Web Master Data Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comwebmasterdataservice"
+          },
+          "relationships" : [ {
+            "description" : "CRUD data master seperti poli, faskes, layanan, alamat",
+            "destinationId" : "56",
+            "id" : "101",
+            "sourceId" : "100",
+            "tags" : "Relationship"
+          }, {
+            "description" : "CRUD data master seperti poli, faskes, layanan, alamat",
+            "destinationId" : "50",
+            "id" : "102",
+            "linkedRelationshipId" : "101",
+            "sourceId" : "100"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "React JS with Typescript"
+        }, {
+          "description" : "Mengelola pemesanan dan jadwal reservasi",
+          "documentation" : { },
+          "id" : "104",
+          "name" : "Web Reservation Service",
+          "properties" : {
+            "structurizr.dsl.identifier" : "comwebreservationservice"
+          },
+          "relationships" : [ {
+            "description" : "Mengelola data reservasi (lihat, ubah, batalkan)",
+            "destinationId" : "60",
+            "id" : "105",
+            "sourceId" : "104",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Mengelola data reservasi (lihat, ubah, batalkan)",
+            "destinationId" : "50",
+            "id" : "106",
+            "linkedRelationshipId" : "105",
+            "sourceId" : "104"
+          } ],
+          "tags" : "Element,Component,Screen",
+          "technology" : "React JS with Typescript"
+        } ],
+        "description" : "Web CMS for Medpoint application.",
+        "documentation" : { },
+        "id" : "90",
+        "name" : "Web CMS Medpoint",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cweb"
+        },
+        "relationships" : [ {
+          "description" : "Mengelola data dokter",
+          "destinationId" : "51",
+          "id" : "94",
+          "linkedRelationshipId" : "92",
+          "sourceId" : "90"
+        }, {
+          "description" : "Mengelola data dokter",
+          "destinationId" : "50",
+          "id" : "95",
+          "linkedRelationshipId" : "92",
+          "sourceId" : "90"
+        }, {
+          "description" : "Login via Email",
+          "destinationId" : "65",
+          "id" : "99",
+          "linkedRelationshipId" : "97",
+          "sourceId" : "90"
+        }, {
+          "description" : "CRUD data master seperti poli, faskes, layanan, alamat",
+          "destinationId" : "56",
+          "id" : "103",
+          "linkedRelationshipId" : "101",
+          "sourceId" : "90"
+        }, {
+          "description" : "Mengelola data reservasi (lihat, ubah, batalkan)",
+          "destinationId" : "60",
+          "id" : "107",
+          "linkedRelationshipId" : "105",
+          "sourceId" : "90"
+        } ],
+        "tags" : "Element,Container,Web",
+        "technology" : "React JS with Typescript"
+      } ],
+      "description" : "Online Reservation system",
+      "documentation" : { },
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "Medpoint System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ssmedpoint"
+      },
+      "relationships" : [ {
+        "description" : "Initiate Username/Password auth flow",
+        "destinationId" : "1",
+        "id" : "19",
+        "linkedRelationshipId" : "17",
+        "sourceId" : "4"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Medpoint",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKICAgIG5hbWUgIk1lZHBvaW50IgogICAgZGVzY3JpcHRpb24gIk1lZHBvaW50IGlzIGEgcGxhdGZvcm0gdG8gcmVzZXJ2ZSBhIGRvY3RvcidzIGFwcG9pbnRtZW50IgogICAgCiAgICBtb2RlbCB7CiAgICAgICAgLy8gTWVuZy1pbmNsdWRlIHNlbXVhIGtvbnRla3MgeWFuZyBkaWJ1dHVoa2FuCiAgICAgICAgc3NFeHRlcm5hbEF1dGggPSBzb2Z0d2FyZVN5c3RlbSAiRXh0ZXJuYWwgQXV0aCIgewogICAgICAgICAgICBkZXNjcmlwdGlvbiAiRXh0ZXJuYWwgSURQIChHb29nbGUvQXBwbGUvTWV0YS9Ud2lsbGlvL01haWxndW4pIgogICAgICAgIH0KICAgICAgICAKICAgICAgICBzc0V4dGVybmFsUGF5bWVudCA9IHNvZnR3YXJlU3lzdGVtICJFeHRlcm5hbCBQYXltZW50IiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJFeHRlcm5hbCBQYXltZW50IChCUkkpIgogICAgICAgIH0KICAgICAgICAKICAgICAgICBzc0V4dGVybmFsTWVzc2FnaW5nID0gc29mdHdhcmVTeXN0ZW0gIkV4dGVybmFsIE1lc3NhZ2luZyIgewogICAgICAgICAgICBkZXNjcmlwdGlvbiAiRXh0ZXJuYWwgTWVzc2FnaW5nIChUd2lsbGlvL01haWxndW4vRkNNKSIKICAgICAgICB9CiAgICAgICAgc3NNZWRwb2ludCA9IHNvZnR3YXJlU3lzdGVtICJNZWRwb2ludCBTeXN0ZW0iIHsKICAgICAgICAgICAgZGVzY3JpcHRpb24gIk9ubGluZSBSZXNlcnZhdGlvbiBzeXN0ZW0iCiAgICAgICAgCiAgICAgICAgICAgIC8vIHJlc291cmNlCiAgICAgICAgICAgIGNEYXRhYmFzZSA9IGNvbnRhaW5lciAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJTdG9yZXMgYWxsIGRhdGEgZm9yIHRoZSBhcHBsaWNhdGlvbi4iCiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlBvc3RncmVTUUwiCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgY29tRGF0YWJhc2VEb2N0b3JNYW5hZ2VtZW50ID0gY29tcG9uZW50ICJEb2N0b3IgTWFuYWdlbWVudCIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW55aW1wYW4gZGFuIG1lbWJhY2EgZGF0YSBkYXJpIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tRGF0YWJhc2VNYXN0ZXJEYXRhU2VydmljZSA9IGNvbXBvbmVudCAiTWFzdGVyIERhdGEgU2VydmljZSIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW55aW1wYW4gZGFuIG1lbWJhY2EgZGF0YSBkYXJpIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tRGF0YWJhc2VQYXltZW50U2VydmljZSA9IGNvbXBvbmVudCAiUGF5bWVudCBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk1lbnlpbXBhbiBkYW4gbWVtYmFjYSBkYXRhIGRhcmkgZGF0YWJhc2UiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBjb21EYXRhYmFzZVJlc2VydmF0aW9uU2VydmljZSA9IGNvbXBvbmVudCAiUmVzZXJ2YXRpb24gU2VydmljZSIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW55aW1wYW4gZGFuIG1lbWJhY2EgZGF0YSBkYXJpIGRhdGFiYXNlIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tRGF0YWJhc2VVc2VyVGFibGUgPSBjb21wb25lbnQgInVzZXJzIiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlN0b3JlcyB1c2VycyBkYXRhLiIKICAgICAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIAogICAgICAgICAgICAvLyBzdXBhYmFzZQogICAgICAgICAgICBjQXV0aCA9IGNvbnRhaW5lciAiU3VwYWJhc2UgQXV0aCBzZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQmFja2VuZCB0byBoYW5kbGUgYXV0aG4vYXV0aHoiCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJTdXBhYmFzZSIKICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBjb21BdXRoRW1haWxMb2dpbiA9IGNvbXBvbmVudCAiQXV0aCBFbWFpbCBMb2dpbiIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJIYW5kbGUgL2xvZ2luL2VtYWlsIgogICAgICAgICAgICAgICAgICAgIC0+IGNvbURhdGFiYXNlVXNlclRhYmxlICJDaGVjayBpZiB1c2VyJ3MgZW1haWwgZXhpc3RzIgogICAgICAgICAgICAgICAgICAgIC0+IHNzRXh0ZXJuYWxBdXRoICJJbml0aWF0ZSBVc2VybmFtZS9QYXNzd29yZCBhdXRoIGZsb3ciCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgY1Jlc3QgPSBjb250YWluZXIgIlBvc3RncmVTUUwgUkVTVCBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQmFja2VuZCB0byBoYW5kbGUgUkVTVCIKICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlN1cGFiYXNlIgogICAgICAgICAgICAKICAgICAgICAgICAgICAgIGNvbVJlc3REb2N0b3JNYW5hZ2VtZW50ID0gY29tcG9uZW50ICJEb2N0b3IgTWFuYWdlbWVudCBSRVNUZnVsIGVuZHBvaW50IiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkhhbmRsZSAvYXBpL3YxL2RvY3Rvcm1hbmFnZW1lbnQiCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAtPiBjb21EYXRhYmFzZURvY3Rvck1hbmFnZW1lbnQgIk1lbmdlbG9sYSBkYXRhIGRva3RlciIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGNvbVJlc3RNYXN0ZXJEYXRhU2VydmljZSA9IGNvbXBvbmVudCAiTWFzdGVyIERhdGEgU2VydmljZSBSRVNUZnVsIGVuZHBvaW50IiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkhhbmRsZSAvYXBpL3YxL21hc3RlcmRhdGFzZXJ2aWNlIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgLT4gY29tRGF0YWJhc2VNYXN0ZXJEYXRhU2VydmljZSAiQ1JVRCBkYXRhIG1hc3RlciBzZXBlcnRpIHBvbGksIGZhc2tlcywgbGF5YW5hbiwgYWxhbWF0IgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tUmVzdFVzZXIgPSBjb21wb25lbnQgIlVzZXIgUkVTVGZ1bCBlbmRwb2ludCIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJIYW5kbGUgL2FwaS92MS91c2VycyIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIC0+IGNvbURhdGFiYXNlVXNlclRhYmxlICJNYW5hZ2UgdXNlcidzIGRhdGEiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAKICAgICAgICAgICAgLy8gYmZmCiAgICAgICAgICAgIGNCZmZNb2JpbGUgPSBjb250YWluZXIgIkJGRiBmb3IgTW9iaWxlIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQmFja2VuZCB0byBoYW5kbGUgTW9iaWxlIHJlbGF0ZWQgcmVxdWVzdHMiCiAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJSYWlkZW4iCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgY29tQmZmTW9iaWxlQXV0aCA9IGNvbXBvbmVudCAiQmZmIG1vYmlsZSBBdXRoIiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkhhbmRsZSAvYXV0aCIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIC0+IGNvbUF1dGhFbWFpbExvZ2luICJDYWxsIGxvZ2luIHdpdGggZW1haWwgZW5kcG9pbnQiCiAgICAgICAgICAgICAgICAgICAgLT4gY29tUmVzdFVzZXIgIkdldCB1c2VyIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBjb21SZXN0UGF5bWVudFNlcnZpY2UgPSBjb21wb25lbnQgIlJlc3QgUGF5bWVudCBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlNlcnZpY2UgeWFuZyBtZW5nZWxvbGEgcGVtYmF5YXJhbiBrZSBnYXRld2F5IGVrc3Rlcm5hbCIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgLy8gIGh1YnVuZ2FuIGFudGFyIGtvbXBvbmVuCiAgICAgICAgICAgICAgICBjb21CZmZNb2JpbGVQYXltZW50U2VydmljZSA9IGNvbXBvbmVudCAiQmZmIG1vYmlsZSBQYXltZW50IFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSGFuZGxlIC9QYXltZW50IFNlcnZpY2UiCiAgICAgICAgICAgICAgICAgICAgLT4gY29tUmVzdFBheW1lbnRTZXJ2aWNlICJNZWxha3VrYW4gcGVtYmF5YXJhbiB0YWdpaGFuIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tUmVzdFJlc2VydmF0aW9uU2VydmljZSA9IGNvbXBvbmVudCAiUmVzdCBSZXNlcnZhdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk1lbmdlbG9sYSBkYXRhIHJlc2VydmFzaSBrZSBzaXN0ZW0gYmFja2VuZCIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgY29tQmZmTW9iaWxlUmVzZXJ2YXRpb25TZXJ2aWNlID0gY29tcG9uZW50ICJCZmYgbW9iaWxlIFJlc2VydmF0aW9uIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSGFuZGxlIC9SZXNlcnZhdGlvbiBTZXJ2aWNlIgogICAgICAgICAgICAgICAgICAgIC0+IGNvbVJlc3RSZXNlcnZhdGlvblNlcnZpY2UgIk1lbWJ1YXQgYXRhdSBtZW1iYXRhbGthbiByZXNlcnZhc2kiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgY0JmZldlYiA9IGNvbnRhaW5lciAiQkZGIGZvciBXZWIiIHsKICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJCYWNrZW5kIHRvIGhhbmRsZSBXZWIgcmVsYXRlZCByZXF1ZXN0cyIKICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlJhaWRlbiIKICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBjb21CZmZXZWJEb2N0b3JNYW5hZ2VtZW50ID0gY29tcG9uZW50ICJCZmYgd2ViIERvY3RvciBNYW5hZ2VtZW50IiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkhhbmRsZSAvIERvY3RvciBNYW5hZ2VtZW50IgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgLT4gY29tUmVzdERvY3Rvck1hbmFnZW1lbnQgIk1lbmdlbG9sYSBkYXRhIGRva3RlciIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGNvbUJmZldlYk1hc3RlckRhdGFTZXJ2aWNlID0gY29tcG9uZW50ICJCZmYgd2ViIE1hc3RlciBEYXRhIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSGFuZGxlIC8gTWFzdGVyIERhdGEgU2VydmljZSIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIC0+IGNvbVJlc3RNYXN0ZXJEYXRhU2VydmljZSAiTWVuZ2Vsb2xhIGRhdGEgbWFzdGVyIHNlcGVydGkgZmFza2VzLCBwb2xpLCBsYXlhbmFuLCBkYW4gYWxhbWF0IgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tQmZmV2ViUmVzZXJ2YXRpb25TZXJ2aWNlID0gY29tcG9uZW50ICJCZmYgd2ViIFJlc2VydmF0aW9uIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSGFuZGxlIC8gUmVzZXJ2YXRpb24gU2VydmljZXMiCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAtPiBjb21SZXN0UmVzZXJ2YXRpb25TZXJ2aWNlICJNZW5nZWxvbGEgcGVtZXNhbmFuIGRhbiBqYWR3YWwgcmVzZXJ2YXNpIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tQmZmV2ViQXV0aCA9IGNvbXBvbmVudCAiQmZmIHdlYiBBdXRoIiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkhhbmRsZSAvYXV0aCIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIC0+IGNvbUF1dGhFbWFpbExvZ2luICJDYWxsIGxvZ2luIHdpdGggZW1haWwgZW5kcG9pbnQiCiAgICAgICAgICAgICAgICAgICAgLT4gY29tUmVzdFVzZXIgIkdldCB1c2VyIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgCiAgICAgICAgICAgIC8vIEZFIChtb2JpbGUvd2ViKQogICAgICAgICAgICBjTW9iaWxlID0gY29udGFpbmVyICJNb2JpbGUgTWVkcG9pbnQiIHsKICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkZsdXR0ZXIiCiAgICAgICAgICAgICAgICB0YWdzICJTY3JlZW4iCiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiTW9iaWxlIHNjcmVlbiBmb3IgTWVkcG9pbnQgYXBwbGljYXRpb24uIgogICAgICAgICAgICAKICAgICAgICAgICAgICAgIGNvbU1vYmlsZUxvZ2luID0gY29tcG9uZW50ICJNb2JpbGUgTG9naW4iIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJGbHV0dGVyIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIlNjcmVlbiIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiTW9iaWxlIExvZ2luIHNjcmVlbi4iCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAtPiBjb21CZmZNb2JpbGVBdXRoICJMb2dpbiB2aWEgRW1haWwiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGNvbU1vYmlsZVBheW1lbnRTZXJ2aWNlID0gY29tcG9uZW50ICJNb2JpbGUgUGF5bWVudCBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiRmx1dHRlciIKICAgICAgICAgICAgICAgICAgICB0YWdzICJTY3JlZW4iCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk1lbmFuZ2FuaSBiaWxsaW5nIGRhbiB2YWxpZGFzaSBwZW1iYXlhcmFuIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgLT4gY29tQmZmTW9iaWxlUGF5bWVudFNlcnZpY2UgIk1lbGFrdWthbiBwZW1iYXlhcmFuIHRhZ2loYW4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBjb21Nb2JpbGVSZWdpc3RlciA9IGNvbXBvbmVudCAiTW9iaWxlIFJlZ2lzdHJhdGlvbiIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkZsdXR0ZXIiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiU2NyZWVuIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNb2JpbGUgQXV0aCBSZWdpc3RyYXRpb24gZm9yIFVzZXIiCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAtPiBjb21CZmZNb2JpbGVBdXRoICJSZWdpc3RlciB3aXRoIEVtYWlsLCBQYXNzLCBVc2VybmFtZSwgTnVtYmVyIFBob25lIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY29tTW9iaWxlUmVzZXJ2YXRpb25TZXJ2aWNlID0gY29tcG9uZW50ICJNb2JpbGUgUmVzZXJ2YXRpb24gU2VydmljZSIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkZsdXR0ZXIiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiU2NyZWVuIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW5nZWxvbGEgcGVtZXNhbmFuIGRhbiBqYWR3YWwgcmVzZXJ2YXNpIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgLT4gY29tQmZmTW9iaWxlUmVzZXJ2YXRpb25TZXJ2aWNlICJNZW1idWF0IGF0YXUgbWVtYmF0YWxrYW4gcmVzZXJ2YXNpIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGNXZWIgPSBjb250YWluZXIgIldlYiBDTVMgTWVkcG9pbnQiIHsKICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJSZWFjdCBKUyB3aXRoIFR5cGVzY3JpcHQiCiAgICAgICAgICAgICAgdGFncyAiV2ViIgogICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJXZWIgQ01TIGZvciBNZWRwb2ludCBhcHBsaWNhdGlvbi4iCiAgICAgICAgICAgIAogICAgICAgICAgICAgIGNvbU1vYmlsZURvY3Rvck1hbmFnZW1lbnQgPSBjb21wb25lbnQgIldlYiBEb2N0b3IgTWFuYWdlbWVudCIgewogICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJSZWFjdCBKUyB3aXRoIFR5cGVzY3JpcHQiCiAgICAgICAgICAgICAgICAgIHRhZ3MgIlNjcmVlbiIKICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk1lbmdlbG9sYSBkYXRhIGRhbiBqYWR3YWwgZG9rdGVyIgogICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAtPiBjb21CZmZXZWJEb2N0b3JNYW5hZ2VtZW50ICJNZW5nZWxvbGEgZGF0YSBkb2t0ZXIiCiAgICAgICAgICAgICAgfQogICAgICAgICAgICAgIGNvbVdlYkxvZ2luID0gY29tcG9uZW50ICJXZWIgTG9naW4iIHsKICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUmVhY3QgSlMgd2l0aCBUeXBlc2NyaXB0IgogICAgICAgICAgICAgICAgICB0YWdzICJTY3JlZW4iCiAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJXZWIgTG9naW4gc2NyZWVuLiIKICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgLT4gY29tQmZmV2ViQXV0aCAiTG9naW4gdmlhIEVtYWlsIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAKICAgICAgICAgICAgICBjb21XZWJNYXN0ZXJEYXRhU2VydmljZSA9IGNvbXBvbmVudCAiV2ViIE1hc3RlciBEYXRhIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUmVhY3QgSlMgd2l0aCBUeXBlc2NyaXB0IgogICAgICAgICAgICAgICAgICB0YWdzICJTY3JlZW4iCiAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW5nZWxvbGEgZGF0YSBtYXN0ZXIgc2VwZXJ0aSBmYXNrZXMsIHBvbGksIGxheWFuYW4sIGRhbiBhbGFtYXQiCiAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIC0+IGNvbUJmZldlYk1hc3RlckRhdGFTZXJ2aWNlICJDUlVEIGRhdGEgbWFzdGVyIHNlcGVydGkgcG9saSwgZmFza2VzLCBsYXlhbmFuLCBhbGFtYXQiCiAgICAgICAgICAgICAgfQogICAgICAgICAgICAgIGNvbVdlYlJlc2VydmF0aW9uU2VydmljZSA9IGNvbXBvbmVudCAiV2ViIFJlc2VydmF0aW9uIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUmVhY3QgSlMgd2l0aCBUeXBlc2NyaXB0IgogICAgICAgICAgICAgICAgICB0YWdzICJTY3JlZW4iCiAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW5nZWxvbGEgcGVtZXNhbmFuIGRhbiBqYWR3YWwgcmVzZXJ2YXNpIgogICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAtPiBjb21CZmZXZWJSZXNlcnZhdGlvblNlcnZpY2UgIk1lbmdlbG9sYSBkYXRhIHJlc2VydmFzaSAobGloYXQsIHViYWgsIGJhdGFsa2FuKSIKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgcFBhc2llbiA9IHBlcnNvbiAiUGFzaWVuIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW1idWF0IHJlc2VydmFzaSwgbWVtYmF0YWxrYW4sIGRhbiBtZWxha3VrYW4gcGVtYmF5YXJhbiIKICAgICAgICAgICAgLT4gc3NNZWRwb2ludCAiUGFzaWVuIGJpc2EgbWVuZ2Frc2VzIHNpc3RlbSB1bnR1ayBtZWxha3VrYW4gcmVzZXJ2YXNpLCBtZWxpaGF0IGRva3RlciBkYW4gamFkd2FsIHJlc2VydmFzaSwgbWVsYWt1a2FuIHBlbWJheWFyYW4iCiAgICAgICAgICAgIC0+IGNvbU1vYmlsZUxvZ2luICJQYXNpZW4gZGFwYXQgbG9naW4gbWVuZ2d1bmFrYW4gYXBsaWthc2kgbW9iaWxlIgogICAgICAgIH0KICAgICAgICAKICAgICAgICBwQWRtaW4gPSBwZXJzb24gIkFkbWluIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW5nZWxvbGEgZGF0YSBtYXN0ZXIsIGphZHdhbCwgc2xvdCByZXNlcnZhc2ksIGRhbiBwZW1iYXlhcmFuIgogICAgICAgICAgICAtPiBzc01lZHBvaW50ICJNZW5nZWxvbGEgZGF0YSBtYXN0ZXIsIGphZHdhbCwgc2xvdCByZXNlcnZhc2ksIGRhbiBwZW1iYXlhcmFuIgogICAgICAgICAgICAtPiBjb21XZWJMb2dpbiAiQWRtaW4gZGFwYXQgbG9naW4gbWVuZ2d1bmFrYW4gd2Vic2l0ZSIKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgcFN1cGVyQWRtaW4gPSBwZXJzb24gIlN1cGVyQWRtaW4iIHsKICAgICAgICAgICAgZGVzY3JpcHRpb24gIk1lbmdlbG9sYSBzZW11YSBkYXRhIG1hc3RlciBkYW4gaGFrIGFrc2VzIHBlbmdndW5hIgogICAgICAgICAgICAtPiBzc01lZHBvaW50ICJiaXNhIG1lbmdlbG9sYSBzZXNpIGtvbnN1bHRhc2kgZGFuIHJlc2VydmFzaSIKICAgICAgICAgICAgLT4gY29tV2ViTG9naW4gIlN1cGVyQWRtaW4gZGFwYXQgbG9naW4gbWVuZ2d1bmFrYW4gYXBsaWthc2kgd2Vic2l0ZSIKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgcERva3RlciA9IHBlcnNvbiAiRG9rdGVyIiB7CiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNZW55ZWRpYWthbiBzbG90IHJlc2VydmFzaSwgbWVueWV0dWp1aSByZXNlcnZhc2ksIG1lbWJlcmlrYW4ga29uc3VsdGFzaSBkYW4gcmVzZXAgb2JhdC4iCiAgICAgICAgICAgIC0+IHNzTWVkcG9pbnQgIm1lbGFrdWthbiBwZW5nZWxvbGFhbiBzZW11YSBkYXRhIG1hc3RlciBkYW4gaGFrIGFrc2VzIHBlbmdndW5hIgogICAgICAgICAgICAtPiBjb21XZWJMb2dpbiAiRG9rdGVyIGRhcGF0IGxvZ2luIG1lbmdndW5ha2FuIGFwbGlrYXNpIHdlYnNpdGUiCiAgICAgICAgfQoKICAgICAgIAogICAgICAgIAogICAgICAgIH0KICAgIAogICAgdmlld3MgewogICAgICAgIAogICAgICAgIAogICAgICAgIC8vQzE6IERpYWdyYW0ga29udGVrcyBzaXN0ZW0gCiAgICAgICAgc3lzdGVtQ29udGV4dCBzc01lZHBvaW50IHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgLy9DMjogRGlhZ3JhbSBjb250YWluZXIgZGFyaSBzaXN0ZW0gTWVkcG9pbnQKICAgICAgICBjb250YWluZXIgc3NNZWRwb2ludCB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCiAgICAgICAgfQogICAgICAgIAogICAgICAgCiAgICAgICAKCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiRWxlbWVudCIgewogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDU1MjdkCiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA2NjI5NgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDc3M2FmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQ29tcG9uZW50IiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM4NWJiZjAKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJFeHRlcm5hbCBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzk5OTk5OQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBDeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlB1YlN1YiIgewogICAgICAgICAgICAgICAgc2hhcGUgUGlwZQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNhY2hlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBIZXhhZ29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiU2NyZWVuIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VQb3J0cmFpdAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIldlYiIgewogICAgICAgICAgICAgICAgc2hhcGUgV2ViQnJvd3NlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlBheW1lbnQgR2F0ZXdheSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjRkY2MzQ3CiAgICAgICAgICAgIAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIk5vdGlmaWNhdGlvbiBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM0NjgyQjQKICAgICAgICAgICAgICAgIAogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIAogICAgICAgIHRoZW1lIGRlZmF1bHQKICAgIH0KCn0="
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "SystemContext-001",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "color" : "#ffffff",
+          "tag" : "Element"
+        }, {
+          "background" : "#05527d",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#066296",
+          "tag" : "Software System"
+        }, {
+          "background" : "#0773af",
+          "tag" : "Container"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "tag" : "Component"
+        }, {
+          "background" : "#999999",
+          "tag" : "External System"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "shape" : "Pipe",
+          "tag" : "PubSub"
+        }, {
+          "shape" : "Hexagon",
+          "tag" : "Cache"
+        }, {
+          "shape" : "MobileDevicePortrait",
+          "tag" : "Screen"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web"
+        }, {
+          "background" : "#ff6347",
+          "tag" : "Payment Gateway"
+        }, {
+          "background" : "#4682b4",
+          "tag" : "Notification Service"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 2659,
+        "width" : 4570
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 3900,
+        "y" : 2024
+      }, {
+        "id" : "5",
+        "x" : 3900,
+        "y" : 1169
+      }, {
+        "id" : "11",
+        "x" : 3150,
+        "y" : 1515
+      }, {
+        "id" : "20",
+        "x" : 3150,
+        "y" : 915
+      }, {
+        "id" : "34",
+        "x" : 2400,
+        "y" : 1515
+      }, {
+        "id" : "50",
+        "x" : 1650,
+        "y" : 915
+      }, {
+        "id" : "73",
+        "x" : 1650,
+        "y" : 1515
+      }, {
+        "id" : "90",
+        "x" : 900,
+        "y" : 915
+      }, {
+        "id" : "108",
+        "x" : 925,
+        "y" : 2024
+      }, {
+        "id" : "112",
+        "x" : 200,
+        "y" : 165
+      }, {
+        "id" : "116",
+        "x" : 200,
+        "y" : 865
+      }, {
+        "id" : "120",
+        "x" : 200,
+        "y" : 1565
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-001",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "111"
+      }, {
+        "id" : "115"
+      }, {
+        "id" : "119"
+      }, {
+        "id" : "123"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "18"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "69",
+        "vertices" : [ {
+          "x" : 2850,
+          "y" : 1365
+        } ]
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "95"
+      } ],
+      "softwareSystemId" : "4"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 2900,
+        "width" : 2300
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 1649,
+        "y" : 1265
+      }, {
+        "id" : "4",
+        "x" : 899,
+        "y" : 1265
+      }, {
+        "id" : "108",
+        "x" : 199,
+        "y" : 165
+      }, {
+        "id" : "112",
+        "x" : 199,
+        "y" : 865
+      }, {
+        "id" : "116",
+        "x" : 199,
+        "y" : 1565
+      }, {
+        "id" : "120",
+        "x" : 199,
+        "y" : 2265
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "generatedKey" : true,
+      "key" : "SystemContext-001",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "109"
+      }, {
+        "id" : "113"
+      }, {
+        "id" : "117"
+      }, {
+        "id" : "121"
+      }, {
+        "id" : "19"
+      } ],
+      "softwareSystemId" : "4"
+    } ]
+  }
+}
