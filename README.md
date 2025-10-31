@@ -1,11 +1,11 @@
-## Create Medpoint architecture diagram using C4 model
+## 🏗️ Create Medpoint architecture diagram using C4 model
 
-## C4 Models untuk Sistem Medpoint
+## 🧩 C4 Models untuk Sistem Medpoint
 Repositori ini berisi diagram C4 model untuk sistem Medpoint Mediverse, yang menggambarkan arsitektur dan struktur sistem dari level tinggi hingga komponen-komponen di dalamnya. Sistem Medpoint adalah platform yang memungkinkan pengguna melakukan reservasi medis online, seperti konsultasi dokter, tes lab, tindakan medis, dan vaksinasi.
 
-## Prasyarat
+## 🧰 Prasyarat
 Untuk menjalankan sistem dan melihat diagram C4, Anda perlu menginstal Docker. Anda bisa mengunduh dan menginstal Docker melalui tautan berikut:
-[Panduan Instalasi Docker](https://www.docker.com)
+👉 [Panduan Instalasi Docker](https://www.docker.com)
 
 ## Cara Menjalankan
 1. **Clone repositori ini**:
@@ -20,7 +20,7 @@ Untuk menjalankan sistem dan melihat diagram C4, Anda perlu menginstal Docker. A
    ```
 3. **Buka browser Anda** dan navigasikan ke `localhost:8085` untuk melihat diagram C4.
 
-## Diagram C4
+## 🗺️ Diagram C4
 Diagram C4 untuk sistem Medpoint:
 - **Diagram Konteks (C1)**
 - **Diagram Container (C2)**
@@ -29,35 +29,35 @@ Diagram C4 untuk sistem Medpoint:
 
 ### Gambaran Sistem Medpoint
 Medpoint adalah platform online yang memudahkan pengguna untuk melakukan reservasi medis. Pengguna dapat mencari dokter, fasilitas kesehatan (faskes), dan membuat janji temu untuk konsultasi, tes, atau tindakan medis lainnya. Sistem ini menyediakan berbagai fitur untuk mempermudah proses reservasi dan pengelolaan data medis.
-Sistem ini dikembangkan menggunakan teknologi berikut:
-- **Raiden Framework**
-- **Go** untuk Back-End
-- **TypeScript dan React JS** untuk Web Front-End
-- **Dart & Flutter** untuk Mobile Front-End
-- **PostgreSQL** untuk Database
-Untuk informasi lebih lanjut, lihat dokumentasi Raiden Framework di: [Raiden Framework Documentation](https://raiden.sev-2.com/)
+ 🔧 Sistem ini dikembangkan menggunakan teknologi berikut:
+-⚙️ **Raiden Framework**
+-💻 **Go** untuk Back-End
+-🌐 **TypeScript dan React JS** untuk Web Front-End
+-📱 **Dart & Flutter** untuk Mobile Front-End
+-🗄️ **PostgreSQL** untuk Database
+📚Untuk informasi lebih lanjut, lihat dokumentasi Raiden Framework di: [Raiden Framework Documentation](https://raiden.sev-2.com/)
 
-### Pengguna Utama
+### 👥 Pengguna Utama
 1. **Super Admin** – Mengelola data master dan hak akses pengguna.
 2. **Admin** – Mengelola data master, jadwal, slot reservasi, dan pembayaran.
 3. **User** – Membuat reservasi, membatalkan, dan melakukan pembayaran.
 4. **Doctor** – Menyediakan slot reservasi, menyetujui reservasi, memberikan konsultasi, dan resep obat.
 
-### Fitur Utama
-#### Fitur CMS:
-- **Auth dan Manajemen Pengguna**: Admin bisa login dan mengelola profil pengguna.
-- **Reservasi**: Super Admin bisa mengelola booking, reschedule, dan cancel reservasi.
-- **Data Dokter**: Super Admin bisa mengelola data dokter.
-- **Data Master**: Super Admin bisa mengelola data fasilitas kesehatan (faskes), poli, layanan, dan alamat.
-- **Pembayaran**: Menampilkan informasi billing dan validasi pembayaran.
-- **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
-#### Fitur Mobile:
-- **User**: Registrasi, login, dan mengelola profil pribadi.
-- **Pembayaran**: Menampilkan tagihan dan melakukan pembayaran.
-- **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
-- **Reservasi**: Mencari, booking, dan membatalkan reservasi.
+### 🌟 Fitur Utama
+#### 🖥️ Fitur CMS:
+-🔐 **Auth dan Manajemen Pengguna**: Admin bisa login dan mengelola profil pengguna.
+-📅 **Reservasi**: Super Admin bisa mengelola booking, reschedule, dan cancel reservasi.
+-🩺 **Data Dokter**: Super Admin bisa mengelola data dokter.
+-🏥 **Data Master**: Super Admin bisa mengelola data fasilitas kesehatan (faskes), poli, layanan, dan alamat.
+-💳 **Pembayaran**: Menampilkan informasi billing dan validasi pembayaran.
+-🔔 **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
+#### 📱 Fitur Mobile:
+-👤 **User**: Registrasi, login, dan mengelola profil pribadi.
+-💸 **Pembayaran**: Menampilkan tagihan dan melakukan pembayaran.
+-🔔 **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
+-📆 **Reservasi**: Mencari, booking, dan membatalkan reservasi.
   
-### C4 Diagram
+### 📊 C4 Diagram
 Context (C1)
 ![structurizr-1-SystemContext-001 (1)](https://github.com/user-attachments/assets/5c7064ec-bb9d-45ef-a832-709a5996ffd6)
 
