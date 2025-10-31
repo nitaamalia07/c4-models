@@ -1,4 +1,4 @@
-## 🏗️ Create Medpoint architecture diagram using C4 model
+# Create Medpoint architecture diagram using C4 model
 
 ## 🧩 C4 Models untuk Sistem Medpoint
 Repositori ini berisi diagram C4 model untuk sistem Medpoint Mediverse, yang menggambarkan arsitektur dan struktur sistem dari level tinggi hingga komponen-komponen di dalamnya. Sistem Medpoint adalah platform yang memungkinkan pengguna melakukan reservasi medis online, seperti konsultasi dokter, tes lab, tindakan medis, dan vaksinasi.
@@ -7,7 +7,7 @@ Repositori ini berisi diagram C4 model untuk sistem Medpoint Mediverse, yang men
 Untuk menjalankan sistem dan melihat diagram C4, Anda perlu menginstal Docker. Anda bisa mengunduh dan menginstal Docker melalui tautan berikut:
 👉 [Panduan Instalasi Docker](https://www.docker.com)
 
-## Cara Menjalankan
+## 🏥 Cara Menjalankan
 1. **Clone repositori ini**:
    ```bash
    git clone https://github.com/nitaamalia07/c4-models.git
@@ -30,11 +30,11 @@ Diagram C4 untuk sistem Medpoint:
 ### 🏗️ Gambaran Sistem Medpoint
 Medpoint adalah platform online yang memudahkan pengguna untuk melakukan reservasi medis. Pengguna dapat mencari dokter, fasilitas kesehatan (faskes), dan membuat janji temu untuk konsultasi, tes, atau tindakan medis lainnya. Sistem ini menyediakan berbagai fitur untuk mempermudah proses reservasi dan pengelolaan data medis.
  🔧 Sistem ini dikembangkan menggunakan teknologi berikut:
--⚙️ **Raiden Framework**
--💻 **Go** untuk Back-End
--🌐 **TypeScript dan React JS** untuk Web Front-End
--📱 **Dart & Flutter** untuk Mobile Front-End
--🗄️ **PostgreSQL** untuk Database
+- **Raiden Framework**
+- **Go** untuk Back-End
+- **TypeScript dan React JS** untuk Web Front-End
+- **Dart & Flutter** untuk Mobile Front-End
+- **PostgreSQL** untuk Database
 📚Untuk informasi lebih lanjut, lihat dokumentasi Raiden Framework di: [Raiden Framework Documentation](https://raiden.sev-2.com/)
 
 ### 👥 Pengguna Utama
@@ -45,17 +45,17 @@ Medpoint adalah platform online yang memudahkan pengguna untuk melakukan reserva
 
 ### 🌟 Fitur Utama
 #### 🖥️ Fitur CMS:
--🔐 **Auth dan Manajemen Pengguna**: Admin bisa login dan mengelola profil pengguna.
--📅 **Reservasi**: Super Admin bisa mengelola booking, reschedule, dan cancel reservasi.
--🩺 **Data Dokter**: Super Admin bisa mengelola data dokter.
--🏥 **Data Master**: Super Admin bisa mengelola data fasilitas kesehatan (faskes), poli, layanan, dan alamat.
--💳 **Pembayaran**: Menampilkan informasi billing dan validasi pembayaran.
--🔔 **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
+- **Auth dan Manajemen Pengguna**: Admin bisa login dan mengelola profil pengguna.
+- **Reservasi**: Super Admin bisa mengelola booking, reschedule, dan cancel reservasi.
+- **Data Dokter**: Super Admin bisa mengelola data dokter.
+- **Data Master**: Super Admin bisa mengelola data fasilitas kesehatan (faskes), poli, layanan, dan alamat.
+- **Pembayaran**: Menampilkan informasi billing dan validasi pembayaran.
+- **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
 #### 📱 Fitur Mobile:
--👤 **User**: Registrasi, login, dan mengelola profil pribadi.
--💸 **Pembayaran**: Menampilkan tagihan dan melakukan pembayaran.
--🔔 **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
--📆 **Reservasi**: Mencari, booking, dan membatalkan reservasi.
+- **User**: Registrasi, login, dan mengelola profil pribadi.
+- **Pembayaran**: Menampilkan tagihan dan melakukan pembayaran.
+- **Notifikasi**: Pengguna bisa menerima dan membaca notifikasi.
+- **Reservasi**: Mencari, booking, dan membatalkan reservasi.
   
 ### 📊 C4 Diagram
 Context (C1)
